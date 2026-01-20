@@ -1,8 +1,19 @@
-def calculate_fairness_score(dp_diff, dp_ratio, eo_diff):
-    score = 100
+def calculate_fairness_score(metrics: dict) -> float:
+    penalties = [
+        metrics["dp_diff"],
+        abs(1 - metrics["dp_ratio"]),
+        metrics["eo_diff"],
+        metrics["fpr_diff"],
+        metrics["pp_diff"]
+    ]
 
-    score -= dp_diff * 40
-    score -= abs(1 - dp_ratio) * 30
-    score -= eo_diff * 30
+    score = (1 - sum(penalties) / len(penalties)) * 100
+    return round(max(0, min(score, 100)), 2)
 
-    return max(0, round(score, 2))
+def interpret_bias(score: float) -> str:
+    if score >= 85:
+        return "Low Bias"
+    elif score >= 65:
+        return "Moderate Bias"
+    else:
+        return "High Bias"

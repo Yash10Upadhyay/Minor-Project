@@ -5,9 +5,10 @@ def recommend_mitigation(metrics: dict):
     """
     recommendations = []
 
-    dp = abs(metrics.get("demographic_parity", 0))
-    eo = abs(metrics.get("equal_opportunity", 0))
-    fpr = abs(metrics.get("false_positive_rate_diff", 0))
+    # Use metric keys produced by run_fairness_audit
+    dp = abs(metrics.get("dp_diff", 0))
+    eo = abs(metrics.get("eo_diff", 0))
+    fpr = abs(metrics.get("fpr_diff", 0))
 
     if dp > 0.1:
         recommendations.append({
@@ -35,6 +36,14 @@ def recommend_mitigation(metrics: dict):
                 "Tune classification thresholds separately per group "
                 "or apply post-processing calibration methods."
             )
+        })
+
+    # Also check dp_ratio (80% rule) from metrics if present
+    dp_ratio = metrics.get("dp_ratio", None)
+    if dp_ratio is not None and dp_ratio < 0.8:
+        recommendations.append({
+            "issue": "Legal Compliance (80% Rule)",
+            "fix": "Selection rates violate the 80% rule. Investigate and mitigate disproportionate selection."
         })
 
     if not recommendations:

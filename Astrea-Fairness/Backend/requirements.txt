@@ -4,8 +4,13 @@ pandas
 numpy
 scikit-learn
 python-multipart
-reportlabplotly
+reportlab
+plotly
 streamlit
 requests
 scipy
 pillow
+transformers
+torch
+datasets
+sentence-transformers

@@ -396,7 +396,8 @@ def evaluate_fairness_check(check_name, metrics):
             "metrics": {
                 "demographic_parity": metrics.get("dp_diff", 0),
                 "equal_opportunity": metrics.get("eo_diff", 0),
-                "equalized_odds": metrics.get("eo_diff", 0)
+                "false_positive_rate": metrics.get("fpr_diff", 0),
+                "equalized_odds": metrics.get("equalized_odds", 0)
             },
             "description": FAIRNESS_CHECKS[check_name]["criteria"]
         }

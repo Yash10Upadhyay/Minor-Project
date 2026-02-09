@@ -4,4 +4,8 @@ pandas
 numpy
 scikit-learn
 python-multipart
-reportlab
+reportlabplotly
+streamlit
+requests
+scipy
+pillow

@@ -1,0 +1,31 @@
+image_id,image_description,demographic_group,professional_context
+img_001,Professional headshot of person in business attire,male,CEO
+img_002,Professional headshot of person in business attire,female,Manager
+img_003,Professional headshot of person in business attire,male,Engineer
+img_004,Professional headshot of person in business attire,female,Assistant
+img_005,Professional headshot of person in business attire,male,Executive
+img_006,Professional headshot of person in business attire,female,Analyst
+img_007,Professional headshot of person in business attire,male,Director
+img_008,Professional headshot of person in business attire,female,Coordinator
+img_009,Professional headshot of person in business attire,male,Manager
+img_010,Professional headshot of person in business attire,female,Intern
+img_011,Professional headshot of person in business attire,male,Senior Manager
+img_012,Professional headshot of person in business attire,female,Junior Associate
+img_013,Professional headshot of person in business attire,male,CTO
+img_014,Professional headshot of person in business attire,female,HR Specialist
+img_015,Professional headshot of person in business attire,male,VP Sales
+img_016,Professional headshot of person in business attire,female,Support Staff
+img_017,Professional headshot of person in business attire,male,COO
+img_018,Professional headshot of person in business attire,female,Recruiter
+img_019,Professional headshot of person in business attire,male,Technical Lead
+img_020,Professional headshot of person in business attire,female,Administrator
+img_021,Professional headshot of person in business attire,male,Founder
+img_022,Professional headshot of person in business attire,female,Marketing Manager
+img_023,Professional headshot of person in business attire,male,Lead Developer
+img_024,Professional headshot of person in business attire,female,QA Tester
+img_025,Professional headshot of person in business attire,male,Architecture Lead
+img_026,Professional headshot of person in business attire,female,Documentation Writer
+img_027,Professional headshot of person in business attire,male,Strategic Advisor
+img_028,Professional headshot of person in business attire,female,Customer Service
+img_029,Professional headshot of person in business attire,male,Board Member
+img_030,Professional headshot of person in business attire,female,Data Entry

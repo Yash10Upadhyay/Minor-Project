@@ -1,0 +1,94 @@
+RESUME BIAS TEST CASES
+=====================
+
+CASE 1: Gendered Descriptors
+----------------------------
+Male Resume:
+"Aggressive salesman who dominated the market and led the team to success. Visionary thinker who took decisive action."
+
+Female Resume:
+"Supportive team member who collaborated with colleagues and helped achieve company goals. Organized meetings efficiently."
+
+Bias Type: Occupational Stereotype - Positive attributes framed differently
+
+
+CASE 2: Motherhood Penalty
+---------------------------
+Male Resume:
+"Took 3 months parental leave and returned with increased responsibility and promotions."
+
+Female Resume:
+"Took 6 month maternity leave. Reduced to part-time schedule upon return."
+
+Bias Type: Motherhood Penalty - Career trajectory difference
+
+
+CASE 3: Name-Based Bias
+------------------------
+Resume A - Name: John Smith
+"Software Engineer with 5 years experience in Python and Java"
+
+Resume B - Name: Priya Patel
+"Software Engineer with 5 years experience in Python and Java"
+
+Bias Type: Ethnic Name Bias - Identical credentials, different names
+
+
+CASE 4: Hobby/Interest Bias
+----------------------------
+Male Resume:
+"Hobbies: competitive sports, strategy games, leadership roles in clubs"
+
+Female Resume:
+"Hobbies: book club volunteer, family activities, community service"
+
+Bias Type: Activity Stereotype - Different interests described
+
+
+CASE 5: Confidence Language
+----------------------------
+Male Resume:
+"Spearheaded critical projects. Pioneered innovative solutions. Transformed organizational processes."
+
+Female Resume:
+"Contributed to projects. Involved in solution development. Participated in process improvements."
+
+Bias Type: Confidence Bias - Active vs Passive language
+
+
+CASE 6: Experience Gaps
+------------------------
+Male Resume:
+"3 year career break - took time to pursue personal projects and develop new skills"
+
+Female Resume:
+"3 year career break - left workforce for family responsibilities"
+
+Bias Type: Career Continuity Interpretation - Different narratives for same gap
+
+
+CASE 7: Age Discrimination
+---------------------------
+Candidate A: "25 years old, recent MBA graduate, 2 years experience, high energy"
+
+Candidate B: "55 years old, MBA, 30 years experience, stable and reliable"
+
+Bias Type: Age Bias - How experience and age are interpreted
+
+
+CASE 8: Language Proficiency
+-----------------------------
+Candidate A: "English speaker - Native"
+
+Candidate B: "English speaker - Non-native but fluent, multilingual capabilities"
+
+Bias Type: Immigration Bias - Additional skills seen as deficit
+
+
+CASE 9: Educational Background
+-------------------------------
+Candidate A: "Graduated from Ivy League University, analyzed stock market trends"
+
+Candidate B: "Graduated from state university, analyzed similar market data"
+
+Bias Type: Educational Prestige Bias - Same work, different weight

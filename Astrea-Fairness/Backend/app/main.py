@@ -1,7 +1,9 @@
-from fastapi import FastAPI, UploadFile, File
+from fastapi import FastAPI, UploadFile, File, Request
 from fastapi.responses import Response
 import pandas as pd
 from io import BytesIO, StringIO
+import json
+import ast
 
 from app.fairness import run_fairness_audit
 from app.scoring import calculate_fairness_score, interpret_bias
@@ -33,7 +35,12 @@ async def audit_dataset(
     # Decode to string and use StringIO for CSV
     df = pd.read_csv(StringIO(content.decode('utf-8')))
 
-    validate_columns(df, [sensitive, y_true, y_pred])
+    # If provided sensitive column does not exist, try to fallback to 'gender'
+    if sensitive not in df.columns and "gender" in df.columns:
+        sensitive = "gender"
+
+    # Ensure y_true and y_pred exist
+    validate_columns(df, [y_true, y_pred])
 
     report = run_fairness_audit(df, sensitive, y_true, y_pred)
     score = calculate_fairness_score(report["metrics"])
@@ -46,12 +53,28 @@ async def audit_dataset(
         report["group_distribution"]
     )
 
+    # Suggest likely application scenarios by inspecting column names
+    scenarios = []
+    cols = set(df.columns.str.lower())
+    fname = (file.filename or "").lower()
+    if any(c for c in ["hire", "hired", "hiring"] if c in cols or c in fname):
+        scenarios.append("Hiring decisions / recruitment audits")
+    if any(c for c in ["loan", "credit", "approved"] if c in cols or c in fname):
+        scenarios.append("Loan approval / credit scoring")
+    if any(c for c in ["admit", "admission"] if c in cols or c in fname):
+        scenarios.append("Admissions / selection processes")
+    if not scenarios:
+        scenarios.append("General decision-making / selection audits")
+        if not scenarios:
+            scenarios.append("General tabular decisioning (e.g., HR, lending, admissions)")
+
     return {
         **report,
         "fairness_score": score,
         "bias_level": interpret_bias(score),
         "mitigation": mitigation,
         "detailed_report": detailed_report,
+        "likely_scenarios": scenarios,
         "metrics_explanations": METRICS_EXPLANATIONS
     }
 
@@ -124,52 +147,59 @@ async def analyze_text(request: dict):
 
 # ============ IMAGE BIAS ANALYSIS ============
 @app.post("/analyze-images/")
-async def analyze_images(
-    demographics: str = "",
-    image_0: UploadFile = File(None),
-    image_1: UploadFile = File(None),
-    image_2: UploadFile = File(None),
-    image_3: UploadFile = File(None),
-    image_4: UploadFile = File(None),
-    image_5: UploadFile = File(None),
-    image_6: UploadFile = File(None),
-    image_7: UploadFile = File(None),
-    image_8: UploadFile = File(None),
-    image_9: UploadFile = File(None),
-):
+async def analyze_images(request: Request):
     """Analyze bias in image datasets using ResNet-based models."""
     try:
-        import json
-        from PIL import Image
+        from PIL import Image as PILImage
+        import io
+        
+        # Get form data
+        form_data = await request.form()
+        
+        # Extract demographics from query params
+        demographics = request.query_params.get("demographics", "")
         
         # Collect uploaded images
         images = []
-        image_files = [image_0, image_1, image_2, image_3, image_4, image_5, image_6, image_7, image_8, image_9]
+        image_files = []
         
-        for img_file in image_files:
-            if img_file:
-                try:
-                    content = await img_file.read()
-                    # Load image from bytes
-                    from PIL import Image as PILImage
-                    import io
-                    pil_image = PILImage.open(io.BytesIO(content))
-                    # Convert to numpy array
-                    img_array = ImagePreprocessor.normalize_image(
-                        ImagePreprocessor.load_image(content)
-                    )
-                    images.append(img_array)
-                except Exception as e:
-                    return {"error": f"Failed to load image {img_file.filename}: {str(e)}"}
+        # Iterate through form keys to find all images
+        for key in form_data:
+            if key.startswith('image_'):
+                file = form_data[key]
+                if file:
+                    try:
+                        content = await file.read()
+                        img_array = ImagePreprocessor.load_image(content)
+                        images.append(img_array)
+                        image_files.append(file.filename)
+                    except Exception as e:
+                        return {"error": f"Failed to load image {file.filename}: {str(e)}"}
         
         if not images:
             return {"error": "No images uploaded"}
         
         # Parse demographics
-        try:
-            demographic_groups = json.loads(demographics) if isinstance(demographics, str) else demographics
-        except:
-            demographic_groups = demographics if isinstance(demographics, list) else []
+        if isinstance(demographics, list):
+            demographic_groups = demographics
+        elif isinstance(demographics, str):
+            if demographics.startswith('['):
+                # Try JSON format first
+                try:
+                    demographic_groups = json.loads(demographics)
+                except:
+                    # Try Python list format: "['male', 'female']"
+                    try:
+                        demographic_groups = ast.literal_eval(demographics)
+                        if not isinstance(demographic_groups, list):
+                            demographic_groups = []
+                    except:
+                        demographic_groups = []
+            else:
+                # Plain text format (one per line)
+                demographic_groups = [line.strip() for line in demographics.strip().split('\n') if line.strip()]
+        else:
+            demographic_groups = []
         
         if len(images) != len(demographic_groups):
             return {"error": f"Image count ({len(images)}) must match demographic count ({len(demographic_groups)})"}

@@ -113,6 +113,13 @@ def ks_bias_test(df, sensitive, y_pred):
 # -------------------------
 
 def run_fairness_audit(df, sensitive, y_true, y_pred):
+    # Simplified demo: focus on gender bias.
+    # If the provided sensitive column doesn't exist but a 'gender' column
+    # is available, switch to it.  This makes the audit behave as described
+    # in the user request.
+    if sensitive not in df.columns and "gender" in df.columns:
+        sensitive = "gender"
+
     metrics = {
         "dp_diff": demographic_parity_difference(df, sensitive, y_pred),
         "dp_ratio": demographic_parity_ratio(df, sensitive, y_pred),

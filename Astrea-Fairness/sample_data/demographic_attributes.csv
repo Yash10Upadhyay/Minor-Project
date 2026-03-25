@@ -1,0 +1,16 @@
+attribute_id,attribute_name,category,values,potential_bias_impact
+A001,gender,demographic,male;female;non-binary,high
+A002,age,demographic,18-25;26-35;36-45;46-55;56+,high
+A003,ethnicity,demographic,asian;caucasian;african;hispanic;middle_eastern,high
+A004,education_level,socioeconomic,bachelors;masters;phd;diploma,medium
+A005,years_experience,socioeconomic,0-2;3-5;6-10;11-15;16+,medium
+A006,location,socioeconomic,urban;suburban;rural,low
+A007,salary_band,socioeconomic,entry;mid;senior;executive,high
+A008,department,occupational,engineering;sales;marketing;hr;finance;operations;research,medium
+A009,employment_type,employment,full-time;part-time;contract;intern,medium
+A010,promotion_history,occupational,no_promotions;one_promotion;multiple_promotions;fast_tracked,high
+A011,marital_status,demographic,single;married;divorced;widowed,medium
+A012,parental_status,demographic,no_children;one_child;multiple_children,high
+A013,language_proficiency,socioeconomic,native;fluent;intermediate;basic,medium
+A014,technical_skills_count,occupational,1-3;4-6;7-10;11+,low
+A015,leadership_experience,occupational,none;junior;mid-level;senior,medium

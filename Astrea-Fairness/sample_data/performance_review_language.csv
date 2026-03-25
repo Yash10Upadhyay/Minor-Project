@@ -1,0 +1,21 @@
+review_id,employee_name,gender,department,positive_descriptors,negative_descriptors,opportunities,rating,potential_bias
+R001,James Anderson,male,Engineering,ambitious brilliant visionary innovative,none,lead larger projects,excellent,neutral
+R002,Sarah Johnson,female,Engineering,reliable organized thorough competent,needs to be more assertive,improved communication,good,gender_stereotype
+R003,Michael Lee,male,Sales,confident dominant aggressive competitor,too pushy sometimes,leverage assertiveness,excellent,might_overestimate
+R004,Jennifer Brown,female,Sales,friendly supportive collaborative helpful,not aggressive enough,develop competitive edge,good,gender_stereotype
+R005,David Martinez,male,Marketing,strategic creative bold innovative,takes risks sometimes,balance more thoroughly,excellent,neutral
+R006,Emily Davis,female,Marketing,cooperative practical detail-oriented precise,lacks strategic vision,develop strategic thinking,good,gender_stereotype
+R007,Robert Garcia,male,Finance,analytical authoritative commanding decisive,very opinionated,listen to others more,excellent,neutral
+R008,Lisa Anderson,female,Finance,accurate conscientious methodical reliable,too cautious sometimes,take more initiative,good,gender_stereotype
+R009,Christopher Wilson,male,Operations,powerful efficient commanding leader,can be abrupt,soften approach,excellent,neutral
+R010,Michelle Taylor,female,Operations,efficient organized supportive coordinator,lacking leadership presence,develop confidence,good,gender_stereotype
+R011,Anthony Rodriguez,male,HR,visionary strategic innovative leader,none,mentor junior staff,excellent,might_overestimate
+R012,Patricia Wilson,female,HR,warm supportive good listener excellent,needs strategic direction,develop business acumen,good,gender_stereotype
+R013,Kevin Jackson,male,Research,brilliant genius exceptional innovative,perfectionist sometimes,delegate more,excellent,neutral
+R014,Rachel Moore,female,Research,detailed hardworking dedicated thorough,could be more imaginative,explore creative solutions,good,gender_stereotype
+R015,Daniel White,male,Management,strong commanding commanding respected,could delegate more,empower team,excellent,neutral
+R016,Victoria Anderson,female,Management,excellent communicator organized supportive,needs stronger presence,assert authority,good,gender_stereotype
+R017,Jason Chen,male,Engineering,exceptional technical brilliant minded,none,expand leadership,excellent,neutral
+R018,Amanda Johnson,female,Engineering,very competent reliable solid performer,needs more confidence,push herself further,good,gender_stereotype
+R019,Matthew Rodriguez,male,Sales,dynamic competitive winning attitude enthusiastic,too forceful,read room better,excellent,neutral
+R020,Catherine Smith,female,Sales,personable relatable helpful accommodating,too nice sometimes,be more assertive,good,gender_stereotype

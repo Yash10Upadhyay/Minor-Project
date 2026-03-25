@@ -1,0 +1,21 @@
+question_id,question_text,category,bias_potential,difficulty_level
+Q001,Tell us about your leadership experience,competency,neutral,medium
+Q002,How have you handled conflicts with team members?,competency,neutral,medium
+Q003,Describe a time you had to make a difficult decision,competency,neutral,hard
+Q004,What are your career ambitions?,personal,could_discriminate_by_gender,medium
+Q005,Do you plan to have children in the next 5 years?,personal,illegal_high_bias,easy
+Q006,How do you balance work and personal life?,personal,could_discriminate_by_gender,easy
+Q007,What technical skills do you have?,competency,neutral,medium
+Q008,Tell us about your educational background,background,could_discriminate_by_class,medium
+Q009,Have you ever been fired or laid off?,background,could_discriminate_by_age,medium
+Q010,Where do you see yourself in 10 years?,personal,could_discriminate_by_gender,easy
+Q011,How would your current manager describe you?,competency,neutral,hard
+Q012,Tell us about your proudest professional achievement,competency,neutral,hard
+Q013,How do you handle stress and pressure?,competency,neutral,medium
+Q014,Describe a failure and what you learned from it,competency,neutral,hard
+Q015,What motivates you in your work?,personal,could_discriminate_by_gender,medium
+Q016,How do you stay current with industry trends?,competency,neutral,medium
+Q017,Tell us about a time you helped a struggling colleague,personal,could_discriminate_by_gender,medium
+Q018,What are your salary expectations?,compensation,neutral,easy
+Q019,Do you have transportation/reliable commute?,personal,illegal_could_discriminate_by_class,easy
+Q020,How committed are you to your career vs family?,personal,could_discriminate_by_gender,medium

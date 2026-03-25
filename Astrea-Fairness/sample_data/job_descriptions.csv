@@ -1,0 +1,21 @@
+job_id,job_title,required_skills,language_tone,bias_indicators
+J001,Software Engineer,Python Java JavaScript,technical professional,neutral
+J002,Administrative Assistant,Excel Word Communication,friendly supportive,might attract female candidates
+J003,Sales Manager,leadership negotiation communication,aggressive dominant,might attract male candidates
+J004,Data Scientist,Python SQL Machine Learning,analytical brilliant genius,neutral
+J005,HR Manager,communication empathy planning,warm supportive collaborative,might attract female candidates
+J006,Director of Engineering,leadership vision strategy,commanding powerful visionary,might attract male candidates
+J007,UX Designer,creativity problem-solving design,collaborative intuitive creative,neutral
+J008,Finance Analyst,Excel SQL accounting,detail-oriented precise methodical,neutral
+J009,Project Manager,leadership organization communication,organized efficient commanding,neutral
+J010,Customer Support Representative,patience communication helpfulness,friendly supportive patient,might attract female candidates
+J011,Product Manager,leadership strategy vision,authoritative decisive visionary,might attract male candidates
+J012,Graphic Designer,creativity design software,artistic innovative collaborative,neutral
+J013,Operations Manager,leadership efficiency organization,aggressive dominant commanding,might attract male candidates
+J014,Content Writer,writing creativity communication,collaborative creative expressive,neutral
+J015,DevOps Engineer,technical systems leadership,brilliant technical commanding,might attract male candidates
+J016,Business Analyst,analysis communication planning,detail-oriented methodical communicative,neutral
+J017,Quality Assurance,attention to detail testing,detail-oriented careful precise,neutral
+J018,Marketing Manager,creativity strategy leadership,ambitious innovative visionary,might attract male candidates
+J019,Legal Counsel,analytical precision professionalism,commanding authoritative powerful,might attract male candidates
+J020,Recruiter,communication empathy collaboration,warm supportive friendly,might attract female candidates

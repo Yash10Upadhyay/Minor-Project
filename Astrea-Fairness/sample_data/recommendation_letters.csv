@@ -1,0 +1,21 @@
+letter_id,candidate_name,gender,recommender_role,language_tone,recommendation_strength,potential_bias
+L001,James Chen,male,Manager,enthusiastic brilliant visionary,strong_recommend,neutral
+L002,Maria Garcia,female,Manager,friendly collaborative reliable,recommend,might_underestimate
+L003,David Smith,male,Director,commanding authoritative exceptional,strong_recommend,might_overestimate
+L004,Sarah Johnson,female,Director,competent effective organized,recommend,might_underestimate
+L005,Robert Williams,male,Professor,genius innovative groundbreaking,strong_recommend,neutral
+L006,Emily Brown,female,Professor,hardworking diligent conscientious,recommend,might_underestimate
+L007,Michael Zhang,male,Mentor,ambitious strategic visionary leader,strong_recommend,neutral
+L008,Lisa Anderson,female,Mentor,pleasant conscientious dependable,recommend,might_underestimate
+L009,Christopher Lee,male,CEO,exceptional transformational outstanding,strong_recommend,neutral
+L010,Jennifer Davis,female,CEO,capable reliable stable performer,recommend,might_underestimate
+L011,Anthony Martinez,male,VP,dynamic powerful commanding presence,strong_recommend,might_overestimate
+L012,Rachel Wilson,female,VP,patient collaborative supportive leader,recommend,might_underestimate
+L013,Kevin Johnson,male,Supervisor,determined aggressive ambitious,strong_recommend,neutral
+L014,Amanda Taylor,female,Supervisor,cooperative team player loyal,recommend,might_underestimate
+L015,Daniel Rodriguez,male,Coach,fierce competitive winning attitude,strong_recommend,might_overestimate
+L016,Victoria Moore,female,Coach,consistent hardworking dedicated,recommend,might_underestimate
+L017,Jason Thompson,male,Advisor,brilliant strategic insightful thinker,strong_recommend,neutral
+L018,Patricia Anderson,female,Advisor,excellent detailed precise worker,recommend,might_underestimate
+L019,Matthew Jackson,male,Lead,dominant authoritative strong leader,strong_recommend,might_overestimate
+L020,Catherine White,female,Lead,competent reliable trustworthy worker,recommend,might_underestimate

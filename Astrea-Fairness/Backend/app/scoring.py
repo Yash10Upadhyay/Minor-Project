@@ -17,7 +17,7 @@ def calculate_fairness_score(metrics: dict) -> float:
     
     # Average penalties, then invert to get score (0 penalty = 100 score)
     avg_penalty = sum(penalties) / len(penalties)
-    score = (1 - avg_penalty) * 100
+     score = (1 - avg_penalty) * 100
     
     # Clamp to [0, 100]
     return round(max(0, min(score, 100)), 2)

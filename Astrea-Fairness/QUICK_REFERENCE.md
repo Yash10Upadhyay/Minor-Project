@@ -1,4 +1,43 @@
-# ⚖️ Astrea Fairness - Quick Reference Card
+# ⚖️ Astrea Fairness Platform - Quick Reference Card
+
+## 🎓 Core Concepts (30 Second Explanation)
+
+### 1. **Configuration**
+```
+What: Your setup and analysis settings
+Why: Tells the system what to analyze and how
+Example: "Open my hiring_data.csv file and look for fairness issues"
+```
+
+### 2. **Sensitive Attribute**
+```
+What: Protected demographic characteristic (gender, race, age, etc.)
+Why: You're checking if system discriminates against protected groups
+Example: gender = ["Male", "Female"] - analyze hiring bias by gender
+```
+
+### 3. **Ground Truth Column**
+```
+What: ACTUAL outcome that happened (facts from history)
+Why: Real baseline to measure fairness against
+Example: hired = ["Yes", "No"] - who was actually hired (verified fact)
+```
+
+### 4. **Prediction Column**
+```
+What: What algorithm/system PREDICTED would happen
+Why: Compare with ground truth to check if algorithm is fair
+Example: algorithm_hired = ["Yes", "No"] - system's recommendation
+```
+
+### 5. **Fairness Analysis**
+```
+What: Comparing all 4 above to detect discrimination
+Process: Does algorithm treat all [Sensitive Attribute] groups equally?
+Result: Bias Score + Recommendations + Visualizations
+```
+
+---
 
 ## 📊 Essential Metrics (At a Glance)
 
@@ -11,6 +50,92 @@
 | Predictive Parity Diff | pp_diff | 0-1 | <0.15 | Prediction reliability | >0.30 |
 | Theil Index | theil | 0-∞ | <0.10 | Inequality in outcomes | >0.25 |
 | Atkinson Index | atkinson | 0-1 | <0.10 | Welfare loss | >0.20 |
+
+---
+
+## 🔄 How It All Works Together: Complete Flow
+
+```
+STEP 1: CONFIGURATION
+  ↓ Load your dataset (CSV file)
+  
+STEP 2: SELECT SENSITIVE ATTRIBUTE
+  ↓ Example: Column "gender" with values [Male, Female]
+  
+STEP 3: SELECT GROUND TRUTH COLUMN
+  ↓ Example: Column "hired" = actual hiring decisions
+  
+STEP 4: SELECT PREDICTION COLUMN
+  ↓ Example: Column "algorithm_hired" = algorithm's recommendation
+  
+STEP 5: SYSTEM ANALYZES
+  ├─ Splits data by gender (sensitive attribute)
+  ├─ Compares Ground Truth vs Prediction
+  ├─ Calculates fairness metrics
+  └─ Flags disparities
+  
+STEP 6: RESULTS DISPLAYED
+  ├─ Disparity ratio (< 80% = discrimination)
+  ├─ Accuracy differences
+  ├─ False positive/negative rates
+  └─ Visualizations
+  
+STEP 7: DECISION MADE
+  ✓ Fair? Use system
+  ⚠️ Minor issues? Monitor & improve
+  ✗ Major bias? Fix before deploying
+```
+
+---
+
+## 📋 Real-World Example: Hiring Analysis
+
+```
+YOUR SETUP:
+  Configuration: hiring_candidates.csv (500 rows)
+  Sensitive Attribute: gender = [Male=250, Female=250]
+  Ground Truth: hired = [Yes, No] from past hiring records
+  Prediction: algorithm_hired = algorithm's recommendations
+
+ANALYSIS RESULTS:
+  
+  All Candidates:
+    Ground Truth: 180 hired out of 500 = 36% hire rate
+    
+  By Gender:
+    Males:   108/250 hired = 43.2% hire rate
+    Females: 72/250 hired = 28.8% hire rate
+    
+  Algorithm Predictions:
+    Males predicted hired:   140/250 = 56%
+    Females predicted hired: 100/250 = 40%
+
+FAIRNESS METRICS:
+  
+  Disparity Ratio (Ground Truth):
+    28.8% / 43.2% = 0.667 = 67% ← VIOLATION (< 80%) 🔴
+    
+  Accuracy:
+    Males: algorithm correct 77% of the time
+    Females: algorithm correct 60% of the time
+    Gap: 17 percentage points ⚠️
+    
+  False Negative Rate (missed qualified candidates):
+    Males: 8% of qualified males predicted reject
+    Females: 25% of qualified females predicted reject
+    Algorithm underestimates women 3x more ✗
+
+LEGAL ASSESSMENT:
+  ✗ DISCRIMINATION DETECTED (67% < 80%)
+  ✗ Algorithm biased against females
+  ✗ Violates Title VII & EEOC guidelines
+  
+RECOMMENDATION:
+  → Immediate remediation required
+  → Remove or adjust biased factors
+  → Retrain algorithm on balanced data
+  → Validate before redeployment
+```
 
 ---
 

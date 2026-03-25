@@ -1,0 +1,21 @@
+employee_id,employee_name,gender,department,years_in_role,performance_rating,promotion_eligible,promoted,promotion_criteria_met,decision_notes
+E001,James Chen,male,Engineering,4,excellent,yes,yes,yes,Strong technical skills and leadership
+E002,Maria Rodriguez,female,Engineering,4,excellent,yes,no,yes,Equal performance but not selected
+E003,David Williams,male,Sales,5,excellent,yes,yes,yes,Outstanding sales record and team development
+E004,Sarah Kim,female,Sales,5,excellent,yes,no,yes,Equal sales record not selected for promotion
+E005,Michael Lee,male,Marketing,3,good,yes,yes,no,Less experienced promoted over senior female
+E006,Jennifer Brown,female,Marketing,5,excellent,yes,no,yes,More senior and better rated not promoted
+E007,Robert Garcia,male,Operations,6,excellent,yes,yes,yes,Clear promotion path followed
+E008,Emily Davis,female,Operations,6,excellent,yes,no,yes,Same credentials not promoted
+E009,Christopher Martin,male,Finance,4,excellent,yes,yes,yes,Strong performance and leadership
+E010,Lisa Anderson,female,Finance,4,excellent,yes,no,yes,Same credentials not selected
+E011,Anthony Johnson,male,Research,5,excellent,yes,yes,yes,Clear research contributions recognized
+E012,Rachel Moore,female,Research,5,excellent,yes,no,yes,Equal research output not promoted
+E013,Kevin White,male,HR,3,good,yes,yes,no,Promoted despite less experience and rating
+E014,Victoria Taylor,female,HR,5,excellent,yes,no,yes,More experienced and better rated not promoted
+E015,Daniel Jackson,male,Management,4,excellent,yes,yes,yes,Strong leadership and business acumen
+E016,Patricia Wilson,female,Management,4,excellent,yes,no,yes,Same performance not promoted
+E017,Jason Anderson,male,Engineering,3,excellent,yes,yes,no,Promoted faster track than female peer
+E018,Amanda Smith,female,Engineering,5,excellent,yes,no,yes,More experience and same rating not promoted
+E019,Matthew Lee,male,Sales,4,excellent,yes,yes,yes,Strong performance and visibility
+E020,Catherine Brown,female,Sales,4,excellent,yes,no,yes,Same performance but not promoted

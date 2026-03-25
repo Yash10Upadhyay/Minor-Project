@@ -1,0 +1,21 @@
+candidate_id,name,gender,age,education,years_experience,department,resume_score,interview_score,hired
+C001,James Anderson,male,32,Masters,8,Engineering,92,88,yes
+C002,Sarah Johnson,female,29,Masters,6,Engineering,89,91,no
+C003,Michael Chen,male,35,PhD,12,Research,95,85,yes
+C004,Priya Patel,female,28,Bachelors,4,Marketing,72,78,no
+C005,David Rodriguez,male,45,Bachelors,18,Sales,78,82,yes
+C006,Emma Wilson,female,31,MBA,9,Management,91,89,no
+C007,Robert Taylor,male,38,Masters,11,Finance,88,87,yes
+C008,Lisa Anderson,female,26,Bachelors,3,Finance,68,95,no
+C009,Christopher Lee,male,42,PhD,15,Engineering,97,92,yes
+C010,Jessica Brown,female,33,Masters,10,Research,94,91,yes
+C011,Daniel Martinez,male,29,Bachelors,5,Sales,75,79,no
+C012,Amanda Garcia,female,40,MBA,16,Management,93,88,yes
+C013,Kevin Johnson,male,27,Bachelors,2,Marketing,65,72,no
+C014,Rachel Davis,female,36,PhD,14,Research,96,94,yes
+C015,Thomas White,male,44,Masters,19,Engineering,89,86,yes
+C016,Victoria Moore,female,35,Masters,11,Engineering,91,90,no
+C017,Andrew Jackson,male,30,Bachelors,6,Operations,76,80,yes
+C018,Nicole Taylor,female,28,MBA,7,Management,88,86,yes
+C019,Joshua Martin,male,39,PhD,13,Research,94,89,no
+C020,Sophia Anderson,female,32,Masters,9,Sales,85,87,yes
